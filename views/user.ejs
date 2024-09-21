@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-200">
+  <div class="container mx-auto mt-10">
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold mb-4">User Profile</h1>
+      <ul class="text-lg">
+        <li><strong>Name:</strong> <%= user.name %></li>
+        <li><strong>Email:</strong> <%= user.email %></li>
+        <li><strong>Created At:</strong> <%= user.createdAt.toDateString() %></li>
+        <li><strong>Updated At:</strong> <%= user.updatedAt.toDateString() %></li>
+      </ul>
+      <div class="mt-5">
+        <a href="/users/edit/<%= user._id %>" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Edit Profile</a>
+        <a href="/users/delete/<%= user._id %>" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Delete User</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
